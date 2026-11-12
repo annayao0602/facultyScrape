@@ -13,6 +13,9 @@ The section is a sequence of lines of four kinds, classified by their text:
 Input, either:
   one page:  python ureg_layout_a_parser.py --html arch_2005.html --year 2005 --school Architecture --url "..."
   one text:  python ureg_layout_a_parser.py --text arch_2005.txt  --year 2005 --school Architecture
+  folder:    python ureg_layout_a_parser.py --folder ureg_pages
+             (pages saved with the save-page bookmarklet; year, Record and school are read
+              from the file name and page heading)
   batch:     python ureg_layout_a_parser.py --manifest manifest_layout_a.csv
              manifest columns: year,record,school,url,file   (file = saved HTML; if blank, url is fetched)
 
@@ -40,12 +43,15 @@ BLOCKS = {"p", "div", "li", "tr", "td", "br", "dd", "dt", "h3", "h4", "h5", "h6"
 SUFFIXES = {"Jr.", "Sr.", "Jr", "Sr", "II", "III", "IV"}
 # degree token: no spaces, contains a period, short (B.A., M.Arch., Ph.D., M.Arch/U.D., LL.M.)
 DEGREE_RE = re.compile(r"^[A-Z][A-Za-z.\-/]*\.[A-Za-z.\-/]*$|^[A-Z][a-z]?\.[A-Z][A-Za-z.\-/]*$")
-RANK_WORDS = re.compile(r"\b(Professors?|Lecturers?|Instructors?|Emerit(i|us|a|ae)|Fellows?|"
-                        r"Scholars?|Librarians?|Faculty|Teaching|Artists?|Writers?|Researchers?)\b", re.I)
+RANK_WORDS = re.compile(r"\b(Coordinators?|Professors?|Lecturers?|Instructors?|Emerit(i|us|a|ae)|Fellows?|"
+                        r"Scholars?|Librarians?|Faculty|Teaching|Artists?|Writers?|Researchers?|Visiting|Honorary|"
+                        r"Retired|Appointments?|Adjunct)\b", re.I)
 UNIT_RE = re.compile(r"^(Department|Office|Division|Program|Center|Centre|Institute|School|"
                      r"Section|Area|Committee|Interdepartmental)\b", re.I)
 TITLE_RANK_RE = re.compile(r"\b((Distinguished |University |Associate |Assistant |Visiting |Adjunct |"
                            r"Research |Clinical )*(Professor|Lecturer|Instructor))\b")
+
+STOP_RE = re.compile(r"^(Return to:|Back to Top|Print \(opens|Help \(opens|Add to (My|Portfolio))", re.I)
 
 RANK_ORDER = ["Professor", "Associate Professor", "Assistant Professor", "Lecturer", "Instructor"]
 
@@ -69,6 +75,8 @@ def lines_from_html(html, anchor="faculty"):
         buf.clear()
         if line:
             lines.append(line)
+            if classify(line)[0] == "stop":
+                return True
             if classify(line)[0] == "entry":
                 seen_entry = True
 
@@ -76,8 +84,8 @@ def lines_from_html(html, anchor="faculty"):
         if isinstance(el, Tag):
             if el.name in HEADINGS_STOP and seen_entry:
                 break
-            if el.name in BLOCKS:
-                flush()
+            if el.name in BLOCKS and flush():
+                return lines
         elif isinstance(el, NavigableString) and el.parent.name not in ("script", "style"):
             buf.append(str(el))
     flush()
@@ -91,24 +99,78 @@ def lines_from_text(text):
 # ----------------------------------------------------------------------------
 # Classification and parsing
 # ----------------------------------------------------------------------------
+PAREN_RE = re.compile(r"\s*\([^)]*\)")
+
+
+def _is_degree_token(s):
+    s = PAREN_RE.sub("", s)
+    return 3 <= len(s) <= 14 and s not in SUFFIXES and bool(DEGREE_RE.match(s))
+
+
+SPELLED_DEGREE_RE = re.compile(
+    r"^((Honorary )?(Doctor|Master|Bachelor)s? of [A-Z][A-Za-z ]+"
+    r"|(Licence|Licencia|Licenciado|Licenciatura|Diplom[ae]?|Dipl\.|Doctorado|Doctorat|Doctor en|"
+    r"Baccalaur[eé]at|Bachillerato|Magister|Laurea|Dottore|Habilitation|Ma[iî]trise|Agr[eé]gation|"
+    r"Staatsexamen|Candidatus)\b.*)$")
+SPACED_DEGREE_RE = re.compile(r"\.\s+(?=[A-Z])")
+
+
 def is_degree(seg):
-    s = seg.strip()
-    return bool(s) and " " not in s and len(s) <= 14 and s not in SUFFIXES and bool(DEGREE_RE.match(s))
+    """One degree ('Ph.D.'), several separated by spaces ('B.S. M.S. Ph.D.'),
+    or a spelled-out degree ('Doctor of Humanities')."""
+    if SPELLED_DEGREE_RE.match(seg.strip()):
+        return True
+    toks = PAREN_RE.sub("", seg).split()
+    if toks and len(toks) <= 5 and all(_is_degree_token(t) for t in toks):
+        return True
+    # spaced forms: "B. A.", "Ph. D.", "M. Arch", "B.S. Arch"
+    joined = SPACED_DEGREE_RE.sub(".", PAREN_RE.sub("", seg).strip())
+    joined = re.sub(r"^([A-Z][a-z]?\.?)\s+(Arch|Ed|Phil|Div|Mus|Sc)\b\.?$", r"\1\2.", joined)
+    return (" " not in joined and _is_degree_token(joined)
+            and all(len(part) <= 4 for part in joined.split(".")))   # rejects "Ph.D. Emeritus"
+
+
+NAME_RE = re.compile(r"^(?:[A-Z][\w'’\-]*\.?|\([A-Z][\w]*\)|[a-z]{1,3})(?:\s+(?:[A-Z][\w'’\-]*\.?|\([A-Z][\w]*\)|de|da|von|van|der|del|la|le|di|du)){1,5}$")
+TITLE_WORDS = re.compile(r"\b(Professor|Lecturer|Instructor|Dean|Director|Emerit|Fellow|Chair|"
+                         r"Coordinator|Librarian|Scholar|Researcher|Faculty)", re.I)
+ORG_WORDS = re.compile(r"\b(Center|Centre|Program|Institute|Office|School|Committee|Studies|Science|"
+                       r"Sciences|Academy|Education|Engineering|Architecture|Development|Fitness|"
+                       r"Communication|Administration|Leadership|Law|Planning|History|Languages?)\b")
+DEPT_ANY_RE = re.compile(r"\b(Department|School|Division|Program|Institute|Center|Office) (of|for)\b")
 
 
 def classify(line):
-    """Return (kind, payload). kind in: skip, entry, rank, unit, program."""
-    if line.lower() in ("faculty", "faculty:"):
+    """Return (kind, payload). kind in: skip, stop, entry, rank, unit, program, unparsed."""
+    if line.lower() in ("faculty", "faculty:") or len(line) <= 2:
         return "skip", None
+    if STOP_RE.match(line):
+        return "stop", None
+    if re.match(r"^vacant\b", line, re.I) or len(line.split()) > 30:
+        return "skip", None            # vacancy placeholders, explanatory paragraphs
     if "," in line:
         segs = [s.strip() for s in line.split(",")]
         nxt = segs[1] if len(segs) > 1 else ""
         if is_degree(nxt) or nxt in SUFFIXES or (len(segs) > 2 and is_degree(segs[2])):
             return "entry", segs
-    words = line.split()
-    if len(words) <= 10 and "," not in line:
-        if UNIT_RE.match(line):
+    # department headings, including named ones and ones with commas:
+    # "Corcoran Department of History", "Department of Curriculum, Instruction, and Special Education"
+    if DEPT_ANY_RE.search(line) and len(line.split()) <= 20 and \
+            not any(is_degree(x) for x in line.split(",")[1:]):
+        first = line.split(",")[0]
+        if not NAME_RE.match(first) or DEPT_ANY_RE.search(first):
             return "unit", line
+    # person with no degrees listed: "Julian V. Noble, Professor Emeritus of Physics"
+    if "," in line:
+        segs = [s.strip() for s in line.split(",")]
+        name = re.sub(r"^(Judge|Justice|Dr\.)\s+", "", segs[0])
+        if NAME_RE.match(name) and TITLE_WORDS.search(", ".join(segs[1:])):
+            return "entry", segs
+    words = line.split()
+    if "," not in line and UNIT_RE.match(line) and len(words) <= 20:
+        return "unit", line
+    if re.fullmatch(r"(Research|Chairs?|Department Chairs?)", line):
+        return "rank", line
+    if len(words) <= 10 and "," not in line:
         if RANK_WORDS.search(line):
             return "rank", line
         if len(words) <= 6:
@@ -116,16 +178,37 @@ def classify(line):
     return "unparsed", line
 
 
+HONORIFIC_RE = re.compile(r"^(Judge|Justice|The Honorable|Hon\.|Dr\.|Professor|Mr\.|Ms\.|Mrs\.)\s+")
+
+
 def parse_entry(segs):
     name, i = segs[0], 1
+    honorific = ""
+    m = HONORIFIC_RE.match(name)
+    if m:
+        honorific, name = m.group(1), name[m.end():]
     if i < len(segs) and segs[i] in SUFFIXES:
         name, i = f"{name}, {segs[i]}", i + 1
     degrees = []
     while i < len(segs) and is_degree(segs[i]):
-        degrees.append(segs[i])
+        seg = segs[i]
+        toks = PAREN_RE.sub("", seg).split()
+        whole = SPELLED_DEGREE_RE.match(seg) or "(" in seg or not all(_is_degree_token(t) for t in toks)
+        degrees.extend([seg] if whole else seg.split())
         i += 1
-    title = ", ".join(s for s in segs[i:] if s)
-    return name, degrees, title
+    rest = [s for s in segs[i:] if s]
+    # a degree stuck to the title by a missing comma: "Ph.D. Paul M. Hammaker Professor ..."
+    if rest:
+        toks = rest[0].split()
+        while len(toks) > 1 and _is_degree_token(toks[0]):
+            deg = toks.pop(0)
+            if toks and toks[0].startswith("("):       # "M.A. (Oxon.) White Burkett ..."
+                deg += " " + toks.pop(0)
+            degrees.append(deg)
+        rest[0] = " ".join(toks)
+    if honorific:
+        rest = [honorific] + rest
+    return name, degrees, ", ".join(rest)
 
 
 def rank_from_heading(h):
@@ -148,7 +231,11 @@ def type_from_heading(h, unit):
     for word, label in [(r"Emerit", "emeritus"), (r"Visiting", "visiting"), (r"Adjunct", "adjunct"),
                         (r"Research", "research"), (r"Clinical", "clinical"),
                         (r"General Faculty", "general faculty"), (r"Lecturer", "lecturer"),
-                        (r"Instructor", "instructor"), (r"Fellow", "fellow"), (r"Librarian", "librarian")]:
+                        (r"Instructor", "instructor"), (r"Fellow", "fellow"), (r"Librarian", "librarian"),
+                        (r"Honorary", "honorary"), (r"Retired", "retired"),
+                        (r"Affiliated", "affiliated"), (r"Secondary", "secondary appointment"),
+                        (r"Postdoctoral", "postdoctoral"), (r"in Residence", "in residence"),
+                        (r"Coordinator", "coordinator")]:
         if re.search(word, h, re.I):
             t.append(label)
     return "; ".join(t) or "regular"
@@ -157,8 +244,15 @@ def type_from_heading(h, unit):
 def parse_lines(lines, meta):
     listings, headings = [], []
     unit = program = rank_h = ""
-    for line in lines:
+    kinds = [classify(l)[0] for l in lines]
+    for idx, line in enumerate(lines):
         kind, payload = classify(line)
+        if kind == "program" and rank_h and NAME_RE.match(line) and not ORG_WORDS.search(line):
+            nxt = next((k for k in kinds[idx + 1:] if k not in ("skip",)), "")
+            if nxt != "rank":
+                kind, payload = "entry", [line]
+        if kind == "stop":
+            break
         if kind == "skip":
             continue
         if kind in ("unit", "program", "rank", "unparsed"):
@@ -169,15 +263,23 @@ def parse_lines(lines, meta):
             program, rank_h = payload, ""
         elif kind == "rank":
             rank_h = payload
+            # a rank group right after the Dean's office starts the school's faculty list
+            # (schools without departments, e.g. Darden, Law); it is not part of the office
+            if re.match(r"Office of the (Dean|Provost)", unit, re.I):
+                unit, program = "", ""
         elif kind == "entry":
             name, degrees, title = parse_entry(payload)
             rank, src = rank_from_heading(rank_h), "heading"
             if not rank:
                 m = TITLE_RANK_RE.search(title)
-                rank, src = (m.group(1), "title") if m else ("", "none")
+                rank, src = (rank_from_heading(m.group(1)), "title") if m else ("", "none")
+            ftype = type_from_heading(rank_h, unit)
+            for word, label in ((r"\bAdjunct\b", "adjunct"), (r"\bEmerit", "emeritus")):
+                if re.search(word, title) and label not in ftype:
+                    ftype = ftype.replace("regular", label) if ftype == "regular" else f"{ftype}; {label}"
             listings.append({**meta, "department": unit, "program": program, "name": name,
                              "rank": rank, "rank_source": src, "rank_heading": rank_h,
-                             "faculty_type": type_from_heading(rank_h, unit), "title": title,
+                             "faculty_type": ftype, "title": title,
                              "degrees": "; ".join(degrees), "raw_line": line})
     return listings, headings
 
@@ -186,10 +288,14 @@ def collapse(listings):
     """One row per person per school-year."""
     people = OrderedDict()
     for l in listings:
-        key = (l["year"], l["record"], l["school"], l["name"].lower())
-        p = people.setdefault(key, {k: l[k] for k in ("year", "record", "school", "name", "source_url")}
-                              | {"departments": [], "ranks": [], "types": [], "titles": [], "n_listings": 0})
+        key = (l["year"], l["school"], re.sub(r"\s+", " ", l["name"]).strip().lower())
+        p = people.setdefault(key, {k: l[k] for k in ("year", "school", "name")}
+                              | {"records": [], "source_urls": [], "departments": [], "ranks": [],
+                                 "types": [], "titles": [], "n_listings": 0})
         p["n_listings"] += 1
+        for f, v in (("records", l["record"]), ("source_urls", l["source_url"])):
+            if v not in p[f]:
+                p[f].append(v)
         for f, v in (("departments", " > ".join(x for x in (l["department"], l["program"]) if x)),
                      ("ranks", l["rank"]), ("types", l["faculty_type"]), ("titles", l["title"])):
             if v and v not in p[f]:
@@ -200,13 +306,13 @@ def collapse(listings):
         best = min(ranked, key=RANK_ORDER.index) if ranked else (p["ranks"][0] if p["ranks"] else "")
         types = [t for t in p["types"] if t != "administration"] or p["types"]
         admin_only = p["types"] == ["administration"]
-        rows.append({"year": p["year"], "record": p["record"], "school": p["school"],
+        rows.append({"year": p["year"], "records": "; ".join(p["records"]), "school": p["school"],
                      "department": " | ".join(d for d in p["departments"] if not d.startswith("Office of")),
                      "name": p["name"], "rank": best, "faculty_type": "; ".join(dict.fromkeys(types)),
                      "titles": " | ".join(p["titles"]), "n_listings": p["n_listings"],
                      "flag": "admin office only; may be staff" if admin_only else
                              ("no rank found" if not best else ""),
-                     "source_url": p["source_url"]})
+                     "source_url": " ; ".join(p["source_urls"])})
     return rows
 
 
@@ -231,7 +337,6 @@ BROWSER_HEADERS = {
     "Accept-Language": "en-US,en;q=0.9",
 }
 _session = None
-USE_BROWSER = False   # set by --browser: fetch with Playwright (a real browser) instead
 
 
 def _get_requests(url):
@@ -250,17 +355,6 @@ def _get_requests(url):
     return r.content
 
 
-def _get_browser(url):
-    from playwright.sync_api import sync_playwright
-    with sync_playwright() as p:
-        b = p.chromium.launch()
-        page = b.new_page(user_agent=BROWSER_HEADERS["User-Agent"])
-        page.goto(url, wait_until="networkidle", timeout=60000)
-        html = page.content().encode("utf-8")
-        b.close()
-    return html
-
-
 def fetch(url, cache_dir=OUT / "cache"):
     import hashlib
     cache_dir.mkdir(parents=True, exist_ok=True)
@@ -268,12 +362,57 @@ def fetch(url, cache_dir=OUT / "cache"):
     if path.exists() and path.stat().st_size > 1000:
         return path.read_bytes()
     time.sleep(2)
-    html = _get_browser(url) if USE_BROWSER else _get_requests(url)
-    if len(html) < 1000:
-        raise ValueError(f"site returned an empty page ({len(html)} bytes); try --browser, "
-                         f"or save the page from your browser and use the manifest's file column")
+    html = _get_requests(url)
+    if len(html) < 1000 or b"verify that you're not a robot" in html:
+        raise ValueError("site returned a bot-check page instead of the Record; save the page "
+                         "from your browser instead (see --folder)")
     path.write_bytes(html)
     return html
+
+
+# catoid -> (start year, Record) for Records that list faculty (from ureg_catalogs.csv)
+CATALOGS = {2: (2005, "Graduate"), 9: (2006, "Graduate"), 12: (2007, "Graduate"), 18: (2008, "Graduate"),
+            23: (2009, "Graduate"), 26: (2010, "Graduate"), 28: (2011, "Graduate"), 30: (2012, "Graduate"),
+            34: (2013, "Graduate"), 38: (2014, "Graduate"), 40: (2015, "Graduate"),
+            1: (2005, "Undergraduate"), 7: (2006, "Undergraduate"), 11: (2007, "Undergraduate"),
+            17: (2008, "Undergraduate"), 22: (2009, "Undergraduate"), 25: (2010, "Undergraduate"),
+            27: (2011, "Undergraduate"), 31: (2012, "Undergraduate"), 33: (2013, "Undergraduate"),
+            37: (2014, "Undergraduate"), 39: (2015, "Undergraduate")}
+
+# name in Record -> canonical school (see school_names.csv); checked in order
+SCHOOL_RULES = [("Arts", "Arts & Sciences"), ("Darden", "Darden"), ("Batten", "Batten"),
+                ("Commerce", "Commerce"), ("Education", "Education"), ("Engineering", "Engineering"),
+                ("Architecture", "Architecture"), ("Law", "Law"), ("Medicine", "Medicine"),
+                ("Nursing", "Nursing"), ("Continuing", "Continuing & Professional Studies"),
+                ("Data Science", "Data Science")]
+
+
+def school_from_page(html):
+    soup = BeautifulSoup(html, "lxml")
+    for el in [*soup.find_all(["h1", "h2"]), soup.title]:
+        t = el.get_text(" ", strip=True) if el else ""
+        for key, school in SCHOOL_RULES:
+            if key.lower() in t.lower():
+                return school, t
+    return "UNKNOWN", ""
+
+
+def folder_jobs(folder):
+    jobs = []
+    for f in sorted(folder.glob("ureg_c*_e*.html")):
+        m = re.match(r"ureg_c(\d+)_e(\d+)", f.name)
+        cat, ent = int(m.group(1)), m.group(2)
+        if cat not in CATALOGS:
+            print(f"  skipping {f.name}: catoid {cat} is not a Record with faculty listings")
+            continue
+        year, record = CATALOGS[cat]
+        school, heading = school_from_page(f.read_bytes())
+        if school == "UNKNOWN":
+            print(f"  {f.name}: school not recognized from page heading; listed as UNKNOWN")
+        jobs.append({"year": year, "record": record, "school": school, "file": str(f),
+                     "url": f"https://records.ureg.virginia.edu/preview_entity.php?catoid={cat}&ent_oid={ent}"})
+    print(f"{len(jobs)} saved pages found in {folder}")
+    return jobs
 
 
 def main():
@@ -282,19 +421,18 @@ def main():
     src.add_argument("--html")
     src.add_argument("--text")
     src.add_argument("--manifest")
+    src.add_argument("--folder", help="folder of pages saved with the save-page bookmarklet")
     ap.add_argument("--year", type=int)
     ap.add_argument("--record", default="Graduate")
     ap.add_argument("--school")
     ap.add_argument("--url", default="")
-    ap.add_argument("--browser", action="store_true",
-                    help="fetch pages with a real browser (pip install playwright; playwright install chromium)")
     a = ap.parse_args()
-    global USE_BROWSER
-    USE_BROWSER = a.browser
     OUT.mkdir(exist_ok=True)
 
     jobs = []
-    if a.manifest:
+    if a.folder:
+        jobs = folder_jobs(Path(a.folder))
+    elif a.manifest:
         with open(a.manifest, newline="", encoding="utf-8") as f:
             jobs = list(csv.DictReader(f))
     else:

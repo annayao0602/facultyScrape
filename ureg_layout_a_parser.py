@@ -51,6 +51,8 @@ UNIT_RE = re.compile(r"^(Department|Office|Division|Program|Center|Centre|Instit
 TITLE_RANK_RE = re.compile(r"\b((Distinguished |University |Associate |Assistant |Visiting |Adjunct |"
                            r"Research |Clinical )*(Professor|Lecturer|Instructor))\b")
 
+NAV_TABS = {"About", "Academic Rules", "Departments/Programs", "Courses", "Information", "Programs/Courses",
+            "Policies", "Programs", "Degree Information", "Concentrations, Minors, and Tracks"}
 STOP_RE = re.compile(r"^(Return to:|Back to Top|Print \(opens|Help \(opens|Add to (My|Portfolio))", re.I)
 
 RANK_ORDER = ["Professor", "Associate Professor", "Assistant Professor", "Lecturer", "Instructor"]
@@ -124,7 +126,7 @@ def _is_degree_token(s):
 
 SPELLED_DEGREE_RE = re.compile(
     r"^((Honorary )?(Doctor|Master|Bachelor)s? of [A-Z][A-Za-z ]+"
-    r"|(Licence|Licencia|Licenciado|Licenciatura|Diplom[ae]?|Dipl\.|Doctorado|Doctorat|Doctor en|"
+    r"|(Dipl[ôo]me|Licence|Licencia|Licenciado|Licenciatura|Diplom[ae]?|Dipl\.|Doctorado|Doctorat|Doctor en|"
     r"Baccalaur[eé]at|Bachillerato|Magister|Laurea|Dottore|Habilitation|Ma[iî]trise|Agr[eé]gation|"
     r"Staatsexamen|Candidatus)\b.*)$")
 SPACED_DEGREE_RE = re.compile(r"\.\s+(?=[A-Z])")
@@ -160,6 +162,9 @@ def split_segments(line):
     segs = [x.strip() for x in line.split(",") if x.strip()]
     if not segs:
         return segs
+    m = re.match(r"^(.+?[a-z])\.\s+((?:[A-Z][A-Za-z]{0,3}\.){2,}.*)$", segs[0])
+    if m and NAME_RE.match(m.group(1)):
+        segs = [m.group(1), m.group(2)] + segs[1:]
     toks = segs[0].replace(" .", " ").split()
     peeled = []
     while len(toks) > 2 and _is_degree_token(toks[-1]):
@@ -173,12 +178,22 @@ def split_segments(line):
 
 def classify(line):
     """Return (kind, payload). kind in: skip, stop, entry, rank, unit, program, unparsed."""
+    m = re.match(r"^(.+?[a-z])\.\s+((?:[A-Z][A-Za-z]{0,3}\.){2,}.*)$", line)   # "Brian H. Annex. M.D."
+    if m and "," not in m.group(1) and NAME_RE.match(m.group(1)):
+        line = f"{m.group(1)}, {m.group(2)}"
     if line.lower() in ("faculty", "faculty:") or len(line) <= 2 or re.match(r"^\^?\s*TOP$", line):
         return "skip", None
     if STOP_RE.match(line):
         return "stop", None
-    if re.fullmatch(r"Program (Directors?|Administrators?|Coordinators?)", line):
+    if line in NAV_TABS:
+        return "skip", None            # catalog page tabs: About | Academic Rules | Courses ...
+    if re.fullmatch(r"(Language |Graduate |Undergraduate )?Program (Directors?|Administrators?|Coordinators?)", line):
         return "rank", line            # role group inside a department, not a unit
+    if re.fullmatch(r"(Senior |Associate |Assistant |Vice )?Deans?:?|Administrative and Professional( Faculty| Staff)?", line):
+        return "rank", line
+    bare = PAREN_RE.sub("", line).strip()
+    if "," not in line and bare != line and NAME_RE.match(bare):
+        return "entry", [line]         # "Jae K. Lee (Courtesy Appointment)"
     if re.match(r"^vacant\b", line, re.I) or re.search(r"Search in Progress", line, re.I) \
             or len(line.split()) > 30 or re.search(r"\d{3}[.\-]\d{3}[.\-]\d{4}|e-?mail|@", line, re.I) \
             or line.rstrip().endswith("("):
@@ -231,6 +246,10 @@ HONORIFIC_RE = re.compile(r"^(Judge|Justice|The Honorable|Hon\.|Dr\.|Professor|M
 
 def parse_entry(segs):
     name, i = segs[0], 1
+    note = ""
+    pm = re.search(r"\s*\(([^)]*(Appointment|Courtesy|Joint|Emerit)[^)]*)\)\s*$", name)
+    if pm:
+        note, name = pm.group(1), name[:pm.start()]
     honorific = ""
     m = HONORIFIC_RE.match(name)
     if m:
@@ -256,6 +275,8 @@ def parse_entry(segs):
         rest[0] = " ".join(toks)
     if honorific:
         rest = [honorific] + rest
+    if note:
+        rest = rest + [note]
     return name, degrees, ", ".join(rest)
 
 
@@ -272,7 +293,11 @@ def rank_from_heading(h):
 
 def type_from_heading(h, unit):
     t = []
-    if h and re.fullmatch(r"Program (Directors?|Administrators?|Coordinators?)", h):
+    if h and re.fullmatch(r"(Senior |Associate |Assistant |Vice )?Deans?:?", h):
+        return "administration"
+    if h and h.startswith("Administrative and Professional"):
+        return "administrative and professional"
+    if h and re.fullmatch(r"(Language |Graduate |Undergraduate )?Program (Directors?|Administrators?|Coordinators?)", h):
         return "program administration"
     if unit and re.match(r"Office of the (Dean|Provost)", unit, re.I):
         t.append("administration")
@@ -285,7 +310,8 @@ def type_from_heading(h, unit):
                         (r"Honorary", "honorary"), (r"Retired", "retired"),
                         (r"Affiliated", "affiliated"), (r"Secondary", "secondary appointment"),
                         (r"Postdoctoral", "postdoctoral"), (r"in Residence", "in residence"),
-                        (r"Coordinator", "coordinator")]:
+                        (r"Coordinator", "coordinator"), (r"Joint Appointment", "joint appointment"),
+                        (r"Courtesy", "courtesy"), (r"of[- ]Practice", "professor of practice")]:
         if re.search(word, h, re.I):
             t.append(label)
     return "; ".join(t) or "regular"
@@ -295,14 +321,32 @@ def parse_lines(lines, meta):
     listings, headings = [], []
     unit = program = rank_h = ""
     kinds = [classify(l)[0] for l in lines]
+    last_kind = ""
     for idx, line in enumerate(lines):
+        if idx > 0 and kinds[idx - 1] not in ("skip",):
+            last_kind = kinds[idx - 1] if not listings or listings[-1]["raw_line"] != lines[idx - 1] \
+                else "entry"
         kind, payload = classify(line)
-        if kind == "unparsed" and listings and kinds[idx - 1] == "entry" and TITLE_WORDS.search(line):
+        chair_line = re.match(r"^(?:[A-Z][\w.'’\-]*\s+){2,}(?:Jr\.?\s+|Sr\.?\s+)?(?:Distinguished\s+)?"
+                              r"(?:Professor|Chair) (?:of|in)\b", line)
+        if kind in ("unparsed", "rank") and listings and kinds[idx - 1] == "entry" and \
+                TITLE_WORDS.search(line) and (kind == "unparsed" or chair_line):
             listings[-1]["title"] = ", ".join(x for x in (listings[-1]["title"], line) if x)
             listings[-1]["raw_line"] += " / " + line
             continue
+        # degrees continued on their own line: "Diplôme d’études supérieures, Ph.D. ."
+        segs_c = [x.strip(" .") for x in line.split(",") if x.strip(" .")]
+        if kind in ("program", "unparsed") and listings and last_kind == "entry" and segs_c and \
+                all(is_degree(x) for x in segs_c):
+            listings[-1]["degrees"] = "; ".join(x for x in (listings[-1]["degrees"], "; ".join(segs_c)) if x)
+            listings[-1]["raw_line"] += " / " + line
+            continue
+        # a name followed by any description inside a faculty group is a person:
+        # "Jordi Nebot, Architect, Polytechnic University of Catalonia"; "Judith Shatin, William R. Kenan, Jr."
+        if kind == "unparsed" and rank_h and "," in line and segs_c and NAME_RE.match(segs_c[0]):
+            kind, payload = "entry", split_segments(line)
         initial = re.search(r"\s[A-Z]\.\s", line)
-        prev_entry = idx > 0 and kinds[idx - 1] == "entry"
+        prev_entry = last_kind in ("entry", "rank")
         if kind == "program" and (rank_h or initial) and NAME_RE.match(line) and not ORG_WORDS.search(line):
             nxt = next((k for k in kinds[idx + 1:] if k not in ("skip",)), "")
             if nxt != "rank" or initial or prev_entry:
@@ -330,7 +374,7 @@ def parse_lines(lines, meta):
                 m = TITLE_RANK_RE.search(title)
                 rank, src = (rank_from_heading(m.group(1)), "title") if m else ("", "none")
             ftype = type_from_heading(rank_h, unit)
-            for word, label in ((r"\bAdjunct\b", "adjunct"), (r"\bEmerit", "emeritus")):
+            for word, label in ((r"\bAdjunct\b", "adjunct"), (r"\bEmerit", "emeritus"), (r"Courtesy", "courtesy")):
                 if re.search(word, title) and label not in ftype:
                     ftype = ftype.replace("regular", label) if ftype == "regular" else f"{ftype}; {label}"
             listings.append({**meta, "department": unit, "program": program, "name": name,

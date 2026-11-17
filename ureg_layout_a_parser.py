@@ -37,7 +37,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 OUT = Path("ureg_out")
 HEADINGS_STOP = {"h1", "h2"}
-BLOCKS = {"p", "div", "li", "tr", "td", "br", "dd", "dt", "h3", "h4", "h5", "h6",
+BLOCKS = {"p", "div", "li", "tr", "td", "br", "dd", "dt", "h1", "h2", "h3", "h4", "h5", "h6",
           "table", "ul", "ol", "strong", "b", "em", "hr"}
 
 SUFFIXES = {"Jr.", "Sr.", "Jr", "Sr", "II", "III", "IV"}
@@ -185,8 +185,8 @@ def classify(line):
         return "skip", None
     if STOP_RE.match(line):
         return "stop", None
-    if line in NAV_TABS:
-        return "skip", None            # catalog page tabs: About | Academic Rules | Courses ...
+    if line in NAV_TABS or re.search(r":\s*Faculty$|^Faculty (for|of) the\b", line):
+        return "skip", None            # tabs, and page titles like "Darden ...: Faculty"            # catalog page tabs: About | Academic Rules | Courses ...
     if re.fullmatch(r"(Language |Graduate |Undergraduate )?Program (Directors?|Administrators?|Coordinators?)", line):
         return "rank", line            # role group inside a department, not a unit
     if re.fullmatch(r"(Senior |Associate |Assistant |Vice )?Deans?:?|Administrative and Professional( Faculty| Staff)?", line):

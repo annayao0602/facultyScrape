@@ -1,0 +1,18 @@
+[
+  {
+    "role": "roster",
+    "url": "http://www.law.virginia.edu/lawweb/Faculty.nsf/fhpmediasub?OpenView&ExpandView",
+    "timestamp": "20150905163415",
+    "days_from_target": 21,
+    "cache_file": "wayback_law/cache/20150905163415_a4a286db49761e18.html",
+    "status": "ok"
+  },
+  {
+    "role": "roster",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/newsFrameShort?open",
+    "timestamp": "20150827070045",
+    "days_from_target": 12,
+    "cache_file": "wayback_law/cache/20150827070045_f22ddf156060a153.html",
+    "status": "ok"
+  }
+]

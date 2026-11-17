@@ -549,7 +549,6 @@ year,record,school,source_url,heading,classified_as
 2011,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=28&navoid=814,Associate Professors,rank
 2011,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=28&navoid=814,Assistant Professors,rank
 2011,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=28&navoid=814,Lecturer,rank
-2012,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=889,Curry School of Graduate Education: Faculty,unit
 2012,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=889,Office of the Dean of the Curry School of Graduate Education,unit
 2012,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=889,"Department of Curriculum, Instruction, and Special Education",unit
 2012,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=889,Professors,rank
@@ -568,7 +567,6 @@ year,record,school,source_url,heading,classified_as
 2012,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=889,Associate Professors,rank
 2012,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=889,Assistant Professors,rank
 2012,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=889,Lecturers,rank
-2012,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=890,Darden Graduate School of Business: Faculty,unit
 2012,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=890,Office of the Dean of the Darden Graduate School of Business Administration,unit
 2012,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=890,Professors,rank
 2012,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=890,Associate Professors,rank
@@ -576,7 +574,6 @@ year,record,school,source_url,heading,classified_as
 2012,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=890,Lecturers,rank
 2012,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=890,Adjunct,rank
 2012,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=890,Administrative and Professional,rank
-2012,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=891,Graduate School of Architecture: Faculty,unit
 2012,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=891,Office of the Dean of the Graduate School of Architecture,unit
 2012,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=891,Department of Architectural History,unit
 2012,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=891,Professors,rank
@@ -679,13 +676,11 @@ year,record,school,source_url,heading,classified_as
 2012,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=892,Professors,rank
 2012,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=892,Associate Professors,rank
 2012,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=892,Assistant Professors,rank
-2012,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=893,Graduate School of Commerce: Faculty,unit
 2012,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=893,Office of the Dean of the McIntire School of Commerce,unit
 2012,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=893,Professors,rank
 2012,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=893,Associate Professors,rank
 2012,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=893,Assistant Professors,rank
 2012,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=893,Lecturers and Adjunct Faculty,rank
-2012,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=894,School of Continuing and Professional Studies: Faculty,unit
 2012,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=894,Office of the Dean,unit
 2012,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=894,Academic Programs,program
 2012,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=894,Regional Academic Outreach,program
@@ -701,7 +696,6 @@ year,record,school,source_url,heading,classified_as
 2012,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=894,Law,program
 2012,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=894,Leadership and Development,program
 2012,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=894,Physical Fitness,program
-2012,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=895,School of Graduate Engineering and Applied Science: Faculty,unit
 2012,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=895,Office of the Dean of the School of Engineering and Applied Science,unit
 2012,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=895,Department of Biomedical Engineering,unit
 2012,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=895,Professors,rank
@@ -759,18 +753,16 @@ year,record,school,source_url,heading,classified_as
 2012,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=896,Assistant Professors,rank
 2012,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=896,Research Associate/Assistant Professors and Research Faculty,rank
 2012,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=896,Instructors,rank
-2012,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=897,School of Law: Faculty,unit
 2012,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=897,Office of the Dean,unit
 2012,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=897,Professors,rank
 2012,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=897,Associate Professors,rank
 2012,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=897,Assistant Professors,rank
 2012,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=897,Research Assistant Professors,rank
 2012,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=897,Lecturers,rank
-2012,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=899,Frank Batten School of Leadership and Public Policy: Faculty,unit
 2012,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=899,Professors,rank
 2012,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=899,Associate Professors,rank
 2012,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=899,Assistant Professors,rank
-2012,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=953,College of Arts & Sciences: Faculty,rank
+2012,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=30&navoid=899,Lecturer,rank
 2012,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=953,Department of Anthropology,unit
 2012,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=953,Professors,rank
 2012,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=953,Associate Professors,rank
@@ -898,7 +890,6 @@ year,record,school,source_url,heading,classified_as
 2012,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=953,Professors,rank
 2012,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=953,Associate Professors,rank
 2012,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=953,Assistant Professor,rank
-2012,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=954,Curry School of Education: Faculty,unit
 2012,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=954,Office of the Dean of the Curry School of Education,unit
 2012,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=954,"Department of Curriculum, Instruction, and Special Education",unit
 2012,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=954,Professors,rank
@@ -917,13 +908,11 @@ year,record,school,source_url,heading,classified_as
 2012,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=954,Associate Professors,rank
 2012,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=954,Assistant Professors,rank
 2012,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=954,Lecturers,rank
-2012,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=955,McIntire School of Commerce: Faculty,unit
 2012,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=955,Office of the Dean of the McIntire School of Commerce,unit
 2012,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=955,Professors,rank
 2012,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=955,Associate Professors,rank
 2012,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=955,Assistant Professors,rank
 2012,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=955,Lecturers,rank
-2012,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=956,School of Architecture: Faculty,unit
 2012,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=956,Office of the Dean of the School of Architecture,unit
 2012,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=956,Department of Architectural History,unit
 2012,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=956,Professors,rank
@@ -946,9 +935,7 @@ year,record,school,source_url,heading,classified_as
 2012,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=956,Associate Professors,rank
 2012,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=956,Assistant Professors,rank
 2012,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=956,Lecturers,rank
-2012,Undergraduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=957,School of Continuing and Professional Studies: Faculty,unit
 2012,Undergraduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=957,Office of the Dean,unit
-2012,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=958,School of Engineering and Applied Science: Faculty,unit
 2012,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=958,Office of the Dean of the School of Engineering and Applied Science,unit
 2012,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=958,Department of Biomedical Engineering,unit
 2012,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=958,Professors,rank
@@ -1003,12 +990,10 @@ year,record,school,source_url,heading,classified_as
 2012,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=959,Assistant Professors,rank
 2012,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=959,Research Associate/Assistant Professors and Research Faculty,rank
 2012,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=959,Instructors,rank
-2012,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=965,Frank Batten School of Leadership and Public Policy: Faculty,unit
 2012,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=965,Professors,rank
 2012,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=965,Associate Professors,rank
 2012,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=965,Assistant Professors,rank
 2012,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=31&navoid=965,Lecturer,rank
-2013,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1257,College of Arts & Sciences: Faculty,rank
 2013,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1257,Department of Anthropology,unit
 2013,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1257,Professors,rank
 2013,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1257,Associate Professors,rank
@@ -1135,7 +1120,6 @@ year,record,school,source_url,heading,classified_as
 2013,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1257,Professors,rank
 2013,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1257,Associate Professors,rank
 2013,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1257,Assistant Professor,rank
-2013,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1258,Curry School of Education: Faculty,unit
 2013,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1258,Office of the Dean of the Curry School of Education,unit
 2013,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1258,"Department of Curriculum, Instruction, and Special Education",unit
 2013,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1258,Professors,rank
@@ -1152,7 +1136,6 @@ year,record,school,source_url,heading,classified_as
 2013,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1258,Associate Professors,rank
 2013,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1258,Assistant Professors,rank
 2013,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1258,Lecturers,rank
-2013,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1259,McIntire School of Commerce: Faculty,unit
 2013,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1259,Office of the Dean of the McIntire School of Commerce,unit
 2013,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1259,Dean:,rank
 2013,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1259,Associate Deans:,rank
@@ -1161,7 +1144,6 @@ year,record,school,source_url,heading,classified_as
 2013,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1259,Associate Professors:,rank
 2013,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1259,Assistant Professors,rank
 2013,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1259,Lecturers,rank
-2013,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1260,School of Architecture: Faculty,unit
 2013,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1260,Office of the Dean of the School of Architecture,unit
 2013,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1260,Department of Architectural History,unit
 2013,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1260,Professors,rank
@@ -1185,9 +1167,7 @@ year,record,school,source_url,heading,classified_as
 2013,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1260,Associate Professors,rank
 2013,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1260,Assistant Professors,rank
 2013,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1260,Lecturers,rank
-2013,Undergraduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1261,School of Continuing and Professional Studies: Faculty,unit
 2013,Undergraduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1261,Office of the Dean,unit
-2013,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1262,School of Engineering and Applied Science: Faculty,unit
 2013,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1262,Office of the Dean of the School of Engineering and Applied Science,unit
 2013,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1262,Department of Biomedical Engineering,unit
 2013,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1262,Professors,rank
@@ -1244,12 +1224,10 @@ year,record,school,source_url,heading,classified_as
 2013,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1263,Assistant Professors,rank
 2013,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1263,Research Associate/Assistant Professors and Research Faculty,rank
 2013,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1263,Instructors,rank
-2013,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1268,Frank Batten School of Leadership and Public Policy: Faculty,unit
 2013,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1268,Professors,rank
 2013,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1268,Associate Professors,rank
 2013,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1268,Assistant Professors,rank
 2013,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=33&navoid=1268,Lecturer,rank
-2013,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1383,Curry School of Graduate Education: Faculty,unit
 2013,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1383,Office of the Dean of the Curry School of Graduate Education,unit
 2013,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1383,"Department of Curriculum, Instruction, and Special Education",unit
 2013,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1383,Professors,rank
@@ -1266,7 +1244,6 @@ year,record,school,source_url,heading,classified_as
 2013,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1383,Associate Professors,rank
 2013,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1383,Assistant Professors,rank
 2013,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1383,Lecturers,rank
-2013,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1384,Darden Graduate School of Business: Faculty,unit
 2013,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1384,Office of the Dean of the Darden Graduate School of Business Administration,unit
 2013,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1384,Professors,rank
 2013,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1384,Associate Professors,rank
@@ -1274,7 +1251,6 @@ year,record,school,source_url,heading,classified_as
 2013,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1384,Lecturers,rank
 2013,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1384,Adjunct,rank
 2013,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1384,Administrative and Professional,rank
-2013,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1385,Graduate School of Architecture: Faculty,unit
 2013,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1385,Office of the Dean of the Graduate School of Architecture,unit
 2013,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1385,Department of Architectural History,unit
 2013,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1385,Professors,rank
@@ -1378,7 +1354,6 @@ year,record,school,source_url,heading,classified_as
 2013,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1386,Professors,rank
 2013,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1386,Associate Professors,rank
 2013,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1386,Assistant Professors,rank
-2013,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1387,Graduate School of Commerce: Faculty,unit
 2013,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1387,Office of the Dean of the McIntire School of Commerce,unit
 2013,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1387,Dean:,rank
 2013,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1387,Associate Deans:,rank
@@ -1387,20 +1362,20 @@ year,record,school,source_url,heading,classified_as
 2013,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1387,Associate Professors,rank
 2013,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1387,Assistant Professors,rank
 2013,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1387,Lecturers,rank
-2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,School of Continuing and Professional Studies: Faculty,unit
+2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Office of the Dean,unit
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Academic Programs,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Regional Academic Outreach,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Academic Services,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Administrative Services,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,SCPS Curriculum and Course Review Committee (CCRC),unparsed
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Academic Oversight Committee for the Bachelor of Interdisciplinary Studies,unparsed
+2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Faculty Coordinators for the FBI National Academy Program,rank
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Behavioral Science,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Forensic Science,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Law Enforcement Communication,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Law,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Leadership and Development,program
 2013,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1388,Physical Fitness,program
-2013,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1389,School of Graduate Engineering and Applied Science: Faculty,unit
 2013,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1389,Office of the Dean of the School of Engineering and Applied Science,unit
 2013,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1389,Department of Biomedical Engineering,unit
 2013,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1389,Professors,rank
@@ -1458,18 +1433,16 @@ year,record,school,source_url,heading,classified_as
 2013,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1390,Assistant Professors,rank
 2013,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1390,Research Associate/Assistant Professors and Research Faculty,rank
 2013,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1390,Instructors,rank
-2013,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1391,School of Law: Faculty,unit
 2013,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1391,Office of the Dean,unit
 2013,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1391,Professors,rank
 2013,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1391,Associate Professors,rank
 2013,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1391,Assistant Professors,rank
 2013,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1391,Research Assistant Professors,rank
 2013,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1391,Lecturers,rank
-2013,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1393,Frank Batten School of Leadership and Public Policy: Faculty,unit
 2013,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1393,Professors,rank
 2013,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1393,Associate Professors,rank
 2013,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1393,Assistant Professors,rank
-2014,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2052,College of Arts & Sciences: Faculty,rank
+2013,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=34&navoid=1393,Lecturer,rank
 2014,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2052,Department of Anthropology,unit
 2014,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2052,Professors,rank
 2014,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2052,Associate Professors,rank
@@ -1598,7 +1571,6 @@ year,record,school,source_url,heading,classified_as
 2014,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2052,Associate Professors,rank
 2014,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2052,Assistant Professor,rank
 2014,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2052,Lecturers,rank
-2014,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2053,Curry School of Education: Faculty,unit
 2014,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2053,Office of the Dean of the Curry School of Graduate Education,unit
 2014,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2053,"Department of Curriculum, Instruction, and Special Education",unit
 2014,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2053,Professors,rank
@@ -1617,7 +1589,6 @@ year,record,school,source_url,heading,classified_as
 2014,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2053,Professors,rank
 2014,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2053,Associate Professors,rank
 2014,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2053,Assistant Professors,rank
-2014,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2054,McIntire School of Commerce: Faculty,unit
 2014,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2054,Office of the Dean of the McIntire School of Commerce,unit
 2014,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2054,Dean:,rank
 2014,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2054,Associate Deans:,rank
@@ -1626,7 +1597,6 @@ year,record,school,source_url,heading,classified_as
 2014,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2054,Associate Professors:,rank
 2014,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2054,Assistant Professors,rank
 2014,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2054,Lecturers,rank
-2014,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2055,School of Architecture: Faculty,unit
 2014,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2055,Office of the Dean of the School of Architecture,unit
 2014,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2055,Department of Architectural History,unit
 2014,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2055,Professors,rank
@@ -1647,9 +1617,7 @@ year,record,school,source_url,heading,classified_as
 2014,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2055,Associate Professors,rank
 2014,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2055,Assistant Professors,rank
 2014,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2055,Lecturers,rank
-2014,Undergraduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2056,School of Continuing and Professional Studies: Faculty,unit
 2014,Undergraduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2056,Office of the Dean,unit
-2014,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2057,School of Engineering and Applied Science: Faculty,unit
 2014,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2057,Office of the Dean of the School of Engineering and Applied Science,unit
 2014,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2057,Department of Biomedical Engineering,unit
 2014,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2057,Professors,rank
@@ -1704,13 +1672,11 @@ year,record,school,source_url,heading,classified_as
 2014,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2058,Assistant Professors,rank
 2014,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2058,Research Associate/Assistant Professors and Research Faculty,rank
 2014,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2058,Instructors,rank
-2014,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2063,Frank Batten School of Leadership and Public Policy: Faculty,unit
 2014,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2063,Professors,rank
 2014,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2063,Associate Professors,rank
 2014,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2063,Assistant Professors,rank
 2014,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2063,Senior Lecturers,rank
 2014,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=37&navoid=2063,Lecturers,rank
-2014,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2178,Curry School of Graduate Education: Faculty,unit
 2014,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2178,Office of the Dean of the Curry School of Graduate Education,unit
 2014,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2178,"Department of Curriculum, Instruction, and Special Education",unit
 2014,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2178,Professors,rank
@@ -1729,14 +1695,13 @@ year,record,school,source_url,heading,classified_as
 2014,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2178,Professors,rank
 2014,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2178,Associate Professors,rank
 2014,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2178,Assistant Professors,rank
-2014,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2179,Darden Graduate School of Business: Faculty,unit
 2014,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2179,Office of the Dean of the Darden Graduate School of Business Administration,unit
+2014,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2179,Professors,rank
 2014,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2179,Associate Professors,rank
 2014,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2179,Assistant Professors,rank
 2014,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2179,Lecturers,rank
 2014,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2179,Adjunct,rank
 2014,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2179,Administrative and Professional,rank
-2014,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2180,Graduate School of Architecture: Faculty,unit
 2014,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2180,Office of the Dean of the Graduate School of Architecture,unit
 2014,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2180,Department of Architectural History,unit
 2014,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2180,Professors,rank
@@ -1747,7 +1712,6 @@ year,record,school,source_url,heading,classified_as
 2014,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2180,Associate Professors,rank
 2014,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2180,Assistant Professors,rank
 2014,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2180,Lecturers,rank
-2014,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2181,Graduate School of Arts & Sciences: Faculty,unit
 2014,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2181,Department of Anthropology,unit
 2014,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2181,Professors,rank
 2014,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2181,Associate Professors,rank
@@ -1902,7 +1866,6 @@ year,record,school,source_url,heading,classified_as
 2014,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2181,Professors,rank
 2014,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2181,Associate Professors,rank
 2014,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2181,Assistant Professors,rank
-2014,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2182,Graduate School of Commerce: Faculty,unit
 2014,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2182,Office of the Dean of the McIntire School of Commerce,unit
 2014,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2182,Dean:,rank
 2014,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2182,Associate Deans:,rank
@@ -1911,20 +1874,20 @@ year,record,school,source_url,heading,classified_as
 2014,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2182,Associate Professors,rank
 2014,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2182,Assistant Professors,rank
 2014,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2182,Lecturers,rank
-2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,School of Continuing and Professional Studies: Faculty,unit
+2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Office of the Dean,unit
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Academic Programs,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Regional Academic Outreach,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Academic Services,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Administrative Services,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,SCPS Curriculum and Course Review Committee (CCRC),unparsed
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Academic Oversight Committee for the Bachelor of Interdisciplinary Studies,unparsed
+2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Faculty Coordinators for the FBI National Academy Program,rank
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Behavioral Science,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Forensic Science,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Law Enforcement Communication,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Law,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Leadership and Development,program
 2014,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2183,Physical Fitness,program
-2014,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2184,School of Graduate Engineering and Applied Science: Faculty,unit
 2014,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2184,Office of the Dean of the School of Engineering and Applied Science,unit
 2014,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2184,Department of Biomedical Engineering,unit
 2014,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2184,Professors,rank
@@ -1980,18 +1943,17 @@ year,record,school,source_url,heading,classified_as
 2014,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2185,Assistant Professors,rank
 2014,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2185,Research Associate/Assistant Professors and Research Faculty,rank
 2014,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2185,Instructors,rank
-2014,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2186,School of Law: Faculty,unit
 2014,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2186,Office of the Dean,unit
 2014,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2186,Professors,rank
 2014,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2186,Associate Professors,rank
 2014,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2186,Assistant Professors,rank
 2014,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2186,Research Assistant Professors,rank
 2014,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2186,Lecturers,rank
-2014,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2188,Frank Batten School of Leadership and Public Policy: Faculty,unit
 2014,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2188,Professors,rank
 2014,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2188,Associate Professors,rank
 2014,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2188,Assistant Professors,rank
-2015,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2282,College of Arts & Sciences: Faculty,rank
+2014,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2188,Senior Lecturers,rank
+2014,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=38&navoid=2188,Lecturers,rank
 2015,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2282,Department of Anthropology,unit
 2015,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2282,Professors,rank
 2015,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2282,Associate Professors,rank
@@ -2120,7 +2082,6 @@ year,record,school,source_url,heading,classified_as
 2015,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2282,Associate Professors,rank
 2015,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2282,Assistant Professor,rank
 2015,Undergraduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2282,Lecturers,rank
-2015,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2283,Curry School of Education: Faculty,unit
 2015,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2283,Office of the Dean of the Curry School of Graduate Education,unit
 2015,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2283,"Department of Curriculum, Instruction, and Special Education",unit
 2015,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2283,Professors,rank
@@ -2139,7 +2100,6 @@ year,record,school,source_url,heading,classified_as
 2015,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2283,Professors,rank
 2015,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2283,Associate Professors,rank
 2015,Undergraduate,Education,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2283,Assistant Professors,rank
-2015,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2284,McIntire School of Commerce: Faculty,unit
 2015,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2284,Office of the Dean of the McIntire School of Commerce,unit
 2015,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2284,Dean:,rank
 2015,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2284,Associate Deans:,rank
@@ -2148,7 +2108,6 @@ year,record,school,source_url,heading,classified_as
 2015,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2284,Associate Professors:,rank
 2015,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2284,Assistant Professors,rank
 2015,Undergraduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2284,Lecturers,rank
-2015,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2285,School of Architecture: Faculty,unit
 2015,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2285,Office of the Dean of the Graduate School of Architecture,unit
 2015,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2285,Department of Architectural History,unit
 2015,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2285,Professors,rank
@@ -2168,9 +2127,7 @@ year,record,school,source_url,heading,classified_as
 2015,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2285,Associate Professors,rank
 2015,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2285,Assistant Professors,rank
 2015,Undergraduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2285,Lecturers,rank
-2015,Undergraduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2286,School of Continuing and Professional Studies: Faculty,unit
 2015,Undergraduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2286,Office of the Dean,unit
-2015,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2287,School of Engineering and Applied Science: Faculty,unit
 2015,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2287,Office of the Dean of the School of Engineering and Applied Science,unit
 2015,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2287,Department of Biomedical Engineering,unit
 2015,Undergraduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2287,Professors,rank
@@ -2227,13 +2184,11 @@ year,record,school,source_url,heading,classified_as
 2015,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2288,Assistant Professors,rank
 2015,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2288,Research Associate/Assistant Professors and Research Faculty,rank
 2015,Undergraduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2288,Instructors,rank
-2015,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2293,Frank Batten School of Leadership and Public Policy: Faculty,unit
 2015,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2293,Professors,rank
 2015,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2293,Associate Professors,rank
 2015,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2293,Assistant Professors,rank
 2015,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2293,Senior Lecturers,rank
 2015,Undergraduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=39&navoid=2293,Lecturers,rank
-2015,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2408,Curry School of Graduate Education: Faculty,unit
 2015,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2408,Office of the Dean of the Curry School of Graduate Education,unit
 2015,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2408,"Department of Curriculum, Instruction, and Special Education",unit
 2015,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2408,Professors,rank
@@ -2252,14 +2207,13 @@ year,record,school,source_url,heading,classified_as
 2015,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2408,Professors,rank
 2015,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2408,Associate Professors,rank
 2015,Graduate,Education,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2408,Assistant Professors,rank
-2015,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2409,Darden Graduate School of Business Administration: Faculty,unit
 2015,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2409,Office of the Dean of the Darden Graduate School of Business Administration,unit
+2015,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2409,Professors,rank
 2015,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2409,Associate Professors,rank
 2015,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2409,Assistant Professors,rank
 2015,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2409,Lecturers,rank
 2015,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2409,Adjunct,rank
 2015,Graduate,Darden,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2409,Administrative and Professional,rank
-2015,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2410,Graduate School of Architecture: Faculty,unit
 2015,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2410,Office of the Dean of the Graduate School of Architecture,unit
 2015,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2410,Department of Architectural History,unit
 2015,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2410,Professors,rank
@@ -2279,7 +2233,6 @@ year,record,school,source_url,heading,classified_as
 2015,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2410,Associate Professors,rank
 2015,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2410,Assistant Professors,rank
 2015,Graduate,Architecture,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2410,Lecturers,rank
-2015,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2411,Graduate School of Arts & Sciences: Faculty,unit
 2015,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2411,Department of Anthropology,unit
 2015,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2411,Professors,rank
 2015,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2411,Associate Professors,rank
@@ -2440,7 +2393,6 @@ year,record,school,source_url,heading,classified_as
 2015,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2411,Associate Professors,rank
 2015,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2411,Assistant Professors,rank
 2015,Graduate,Arts & Sciences,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2411,Lecturers,rank
-2015,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2412,Graduate School of Commerce: Faculty,unit
 2015,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2412,Office of the Dean of the McIntire School of Commerce,unit
 2015,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2412,Dean:,rank
 2015,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2412,Associate Deans:,rank
@@ -2449,19 +2401,19 @@ year,record,school,source_url,heading,classified_as
 2015,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2412,Associate Professors,rank
 2015,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2412,Assistant Professors,rank
 2015,Graduate,Commerce,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2412,Lecturers,rank
-2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,School of Continuing and Professional Studies: Faculty,unit
+2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Office of the Dean,unit
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Academic Programs,program
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Regional Academic Outreach,program
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Academic Services,program
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Administrative Services,program
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,SCPS Curriculum and Course Review Committee (CCRC),unparsed
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Academic Oversight Committee for the Bachelor of Interdisciplinary Studies,unparsed
+2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Faculty Coordinators for the FBI National Academy Program,rank
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Behavioral Science,program
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Forensic Science,program
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Law,program
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Leadership and Communication,program
 2015,Graduate,Continuing & Professional Studies,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2413,Physical Fitness,program
-2015,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2414,School of Graduate Engineering and Applied Science: Faculty,unit
 2015,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2414,Office of the Dean of the School of Engineering and Applied Science,unit
 2015,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2414,Department of Biomedical Engineering,unit
 2015,Graduate,Engineering,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2414,Professors,rank
@@ -2519,14 +2471,14 @@ year,record,school,source_url,heading,classified_as
 2015,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2415,Assistant Professors,rank
 2015,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2415,Research Associate/Assistant Professors and Research Faculty,rank
 2015,Graduate,Nursing,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2415,Instructors,rank
-2015,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2416,School of Law: Faculty,unit
 2015,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2416,Office of the Dean,unit
 2015,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2416,Professors,rank
 2015,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2416,Associate Professors,rank
 2015,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2416,Assistant Professors,rank
 2015,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2416,Research Assistant Professors,rank
 2015,Graduate,Law,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2416,Lecturers,rank
-2015,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2418,Frank Batten School of Leadership and Public Policy: Faculty,unit
 2015,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2418,Professors,rank
 2015,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2418,Associate Professors,rank
 2015,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2418,Assistant Professors,rank
+2015,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2418,Senior Lecturers,rank
+2015,Graduate,Batten,https://records.ureg.virginia.edu/content.php?catoid=40&navoid=2418,Lecturers,rank

@@ -1,0 +1,4 @@
+year,target,roster_url,roster_snapshot_ts,roster_days_from_target,roster_pages_missing,profiles_linked,profiles_archived,records_parsed,roster_method,flag,url_changed_from_prev,page_structure,capture_completeness
+2005,20050815,http://www.law.virginia.edu/lawweb/faculty.nsf/FDBN?OpenView&ExpandView,20060829194319,379,0,78,78,78,profile-link heuristic,,,,
+2015,20150815,http://www.law.virginia.edu/html/faculty/resident.htm,20150811030108,4,0,121,121,121,profile-link heuristic,,Y: /lawweb/faculty.nsf/FDBN -> /html/faculty/resident.htm,,
+2025,20250815,https://www.law.virginia.edu/faculty/directory/faculty?faculty_type=521,20250524222938,83,0,103,100,104,css,,Y: /html/faculty/resident.htm -> /faculty/directory/faculty,,

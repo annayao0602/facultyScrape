@@ -1,0 +1,11 @@
+# Saved/cached web pages (ureg pages are saved by hand; Wayback pages are re-fetchable)
+*.html
+ureg_out/cache/
+wayback_law/cache/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

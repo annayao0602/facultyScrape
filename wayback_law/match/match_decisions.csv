@@ -1,0 +1,5 @@
+web_year,ureg_year,web_name,ureg_name,why_flagged,score,web_title,ureg_title,decision,note
+2005,2006,Kerry Abrams,Karen Abrams,"same surname, different first name",0.75,"Associate Professor of Law | Co-Director, Center for Children, Families and the Law",Associate Professor,match,provisional: accepted all pending pairs 2026-11-19; verify
+2005,2006,Margaret Foster Riley,Margaret V. W. Riley,"same first and last name, middle initials differ",1.00,"Professor, General Faculty | Co-Director, Legal Research and Writing Program",Professor | Co-Director of Legal Research and Writing,match,provisional: accepted all pending pairs 2026-11-19; verify
+2005,2006,Robert Nelson Sayler,Robert N. Saylor,fuzzy surname score 0.83,0.92,"Professor, General Faculty",Professor,match,provisional: accepted all pending pairs 2026-11-19; verify
+2015,2015,Kerry Abrams,Karen Abrams,"same surname, different first name",0.75,Vice Provost for Faculty Affairs | Professor of Law,"Professor | Albert Clark Tate, Jr., Vice Provost for Faculty Affairs",match,provisional: accepted all pending pairs 2026-11-19; verify

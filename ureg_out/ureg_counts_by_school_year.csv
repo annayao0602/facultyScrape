@@ -1,0 +1,23 @@
+school,measure,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+Architecture,all listed,86,89,88,87,71,79,72,74,75,59,56
+Architecture,core_suggested,65,68,67,65,66,74,67,69,69,52,53
+Arts & Sciences,all listed,1068,1093,990,1208,1090,1099,1064,974,973,1091,1086
+Arts & Sciences,core_suggested,894,916,816,1031,1089,1098,1064,974,973,1090,1085
+Batten,all listed,0,0,0,0,0,0,24,30,27,36,39
+Batten,core_suggested,0,0,0,0,0,0,24,30,27,36,38
+Commerce,all listed,92,97,100,102,80,82,92,85,94,100,106
+Commerce,core_suggested,68,71,71,73,75,77,84,78,82,87,92
+Continuing & Professional Studies,all listed,94,92,98,54,43,47,52,52,53,51,46
+Continuing & Professional Studies,core_suggested,0,0,0,0,0,0,0,0,0,0,0
+Darden,all listed,150,151,164,169,179,182,182,137,129,123,130
+Darden,core_suggested,110,95,105,103,124,127,127,103,97,93,99
+Education,all listed,138,130,133,142,93,89,101,104,105,108,117
+Education,core_suggested,102,95,97,103,91,87,100,102,101,107,116
+Engineering,all listed,289,308,330,350,284,288,272,265,271,276,293
+Engineering,core_suggested,206,226,248,267,273,274,259,257,262,267,282
+Law,all listed,148,160,100,104,101,106,103,104,100,104,102
+Law,core_suggested,128,140,76,77,89,93,92,91,88,92,90
+Nursing,all listed,65,83,83,84,75,69,66,89,84,102,98
+Nursing,core_suggested,49,63,63,66,66,62,61,89,84,102,98
+TOTAL,all listed,2130,2203,2086,2300,2016,2041,2028,1914,1911,2050,2073
+TOTAL,core_suggested,1622,1674,1543,1785,1873,1892,1878,1793,1783,1926,1953

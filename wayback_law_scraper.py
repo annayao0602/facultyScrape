@@ -57,7 +57,7 @@ CACHE = OUT / "cache"
 DELAY = 2.0                  # seconds between requests (be polite to the Archive)
 ROSTER_WINDOW_DAYS = 60      # roster snapshots within +/- this of the target
 PROFILE_WINDOW_DAYS = 180    # profiles are archived less often, so allow a wider window
-USER_AGENT = "UVA-faculty-research/0.2 (contact: YOUR_EMAIL_HERE)"
+USER_AGENT = "UVA-faculty-research/0.2 (contact: annayao0602@gmail.com)"
 
 ORCID_START, SCHOLAR_START = 2012, 2011   # earlier years -> not_applicable
 
@@ -82,6 +82,7 @@ CONFIG = {2005: _blank("20050815"), 2015: _blank("20150815"), 2025: _blank("2025
 # 2005: the site is a frameset; the faculty-only list is the inner frame (Fr1), so that frame
 #       is the roster. Seen at snapshot 20051114031816 (closest capture found by hand).
 CONFIG[2005]["roster_url"] = "http://www.law.virginia.edu/lawweb/faculty.nsf/FDBN?OpenView&ExpandView"   # Faculty Directory By Name, all sections; found at snapshot 20060829194319
+CONFIG[2005]["profile_window_days"] = 400
 CONFIG[2005]["roster_window_days"] = 400      # FDBN may be archived only in 2006; closest capture is used and its distance logged
 # 2015: Lotus Notes view of the faculty directory, snapshot 20150905163133
 CONFIG[2015]["roster_url"] = "http://www.law.virginia.edu/html/faculty/resident.htm"   # resident faculty list; snapshot 20150905083840
@@ -89,7 +90,26 @@ CONFIG[2015]["roster_url"] = "http://www.law.virginia.edu/html/faculty/resident.
 # Profile links (from inspect): Lotus Notes document links
 CONFIG[2005]["profile_regex"] = r"/lawweb/faculty\.nsf/[0-9a-fA-F]{32}/[0-9a-fA-F]{32}\?OpenDocument$"
 CONFIG[2005]["pagination_regex"] = r"/faculty\.nsf/F?DBN\?OpenView&Start=[\d.]+$"   # next pages of a long view
-CONFIG[2015]["profile_regex"] = r"/lawweb/[Ff]aculty\.nsf/PrFMPbW/\w+$"           # one profile per web id
+CONFIG[2015]["profile_regex"] = r"/lawweb/[Ff]aculty\.nsf/FHPbI/\d+$"   # faculty home page by ID (resident.htm links)
+
+# 2025: Drupal site. Faculty directory filtered by type; Resident Faculty = faculty_type=521
+# (others: 6506 Visiting, 6501 Other Disciplines, 11676 Other Scholars, 171 Adjunct, 6476 Emeritus).
+# One page, 103 profile links, closest capture 20250524222938 (83 days before target; none closer within 120).
+CONFIG[2025]["roster_url"] = "https://www.law.virginia.edu/faculty/directory/faculty?faculty_type=521"
+CONFIG[2025]["roster_window_days"] = 120
+# /faculty/profile/<computing id>/<number>; the number is the old FHPbI ID (e.g. Deeks 2378410 in 2015 and 2025)
+CONFIG[2025]["profile_regex"] = r"/faculty/profile/[a-z0-9]+/\d+$"
+CONFIG[2025]["extractor"] = "law_drupal_2025"           # 2025 Drupal profiles: standard field classes
+# Roster cards carry name, titles and room, used when a profile isn't archived (3 of 103).
+CONFIG[2025]["item"] = "div.view-faculty-staff div.views-row"
+CONFIG[2025]["name"] = ".field--name-title"
+CONFIG[2025]["title"] = ".field--name-field-position-title .field__item"
+CONFIG[2025]["roster_office"] = ".field--name-field-office"
+
+# Profile extractors (structure-based; CSS selectors alone can't reach these fields).
+# Name of a function in EXTRACTORS; it overrides the CSS selectors in CONFIG[year]["profile"].
+CONFIG[2005]["extractor"] = "law_notes_directory_card"   # 2005-06 directory cards: name, title, Office:
+CONFIG[2015]["extractor"] = "law_fhp_2015"               # 2015 faculty home pages: sidebar + body
 
 FIELDS = ["year", "name", "rank", "website_link", "bio", "research_interests", "keywords",
           "dept_address", "office_number", "orcid", "google_scholar", "ssrn",
@@ -279,6 +299,41 @@ def homepage_links(session, year):
 # ----------------------------------------------------------------------------
 # fetch
 # ----------------------------------------------------------------------------
+NOTES_DOC_RE = re.compile(r"^(https?://[^/]+/.+?\.nsf)/[^/]+/([0-9a-fA-F]{32})\?OpenDocument$", re.I)
+_notes_index = {}
+
+
+def notes_fallback(session, url, target, days):
+    """Lotus Notes serves one document under any view: /db.nsf/<viewA>/<doc> and /db.nsf/<viewB>/<doc>
+    are the same page. The Archive often captured a profile under a different view than the one the
+    roster links to. Index every archived page in the database once (by document ID) and look the
+    profile up there."""
+    m = NOTES_DOC_RE.match(url)
+    if not m:
+        return None
+    db, doc = m.group(1), m.group(2).lower()
+    key = (db.lower(), target, days)
+    if key not in _notes_index:
+        start, end = window(target, days)
+        prefix = re.sub(r"^https?://", "", db) + "/"
+        print(f"  building document index for {prefix} (one-time, may take a minute)...", flush=True)
+        index = {}
+        try:
+            caps = cdx(session, prefix, start, end, match_type="prefix", limit=50000, timeout=240)
+        except requests.RequestException as e:
+            print(f"  document index failed ({type(e).__name__}); profiles stay not_archived")
+            caps = []
+        for c in caps:
+            mm = re.search(r"/([0-9a-fA-F]{32})\?OpenDocument", c["original"], re.I)
+            if mm:
+                d = mm.group(1).lower()
+                if d not in index or days_off(c["timestamp"], target) < days_off(index[d]["timestamp"], target):
+                    index[d] = c
+        _notes_index[key] = index
+        print(f"  document index: {len(index)} archived documents", flush=True)
+    return _notes_index[key].get(doc)
+
+
 def fetch_year(session, year, profiles=True):
     cfg = CONFIG[year]
     if not cfg["roster_url"]:
@@ -293,8 +348,15 @@ def fetch_year(session, year, profiles=True):
         if url in seen:
             continue
         seen.add(url)
-        days = PROFILE_WINDOW_DAYS if role == "profile" else cfg.get("roster_window_days", ROSTER_WINDOW_DAYS)
+        days = cfg.get("profile_window_days", PROFILE_WINDOW_DAYS) if role == "profile" \
+            else cfg.get("roster_window_days", ROSTER_WINDOW_DAYS)
         cap = closest_capture(session, url, cfg["target"], days)
+        if not cap and re.search(r"/[Ff]aculty\.nsf/", url):
+            # the Archive treats Faculty.nsf and faculty.nsf as different addresses; try the other case
+            alt = re.sub(r"/([Ff])aculty\.nsf/", lambda m: "/" + ("f" if m.group(1) == "F" else "F") + "aculty.nsf/", url)
+            cap = closest_capture(session, alt, cfg["target"], days)
+        if not cap and role == "profile":
+            cap = notes_fallback(session, url, cfg["target"], days)
         if not cap:
             pages.append({"role": role, "url": url, "status": NOT_ARCHIVED})
             print(f"  [{role}] NOT ARCHIVED {url}")
@@ -319,6 +381,9 @@ def fetch_year(session, year, profiles=True):
                     queue.append(("pagination", link))
                 elif profiles and cfg["profile_regex"] and re.search(cfg["profile_regex"], link):
                     queue.append(("profile", link))
+    if profiles and cfg["profile_regex"] and not any(p["role"] == "profile" for p in pages):
+        print(f"[{year}] WARNING: no links on the roster match profile_regex; run inspect and "
+              f"check the most common link patterns")
     path = OUT / f"manifest_{year}.json"
     path.write_text(json.dumps(pages, indent=2))
     for role in ("roster", "pagination", "profile"):
@@ -399,24 +464,145 @@ def sel_text(soup, sel, joiner=" "):
 
 
 def roster_entries(cfg, page):
-    """Yield (name, roster_title, profile_url) from one roster page."""
+    """Yield (name, roster_title, profile_url, roster_office) from one roster page.
+    With `item`: `name`/`title`/`roster_office` are CSS selectors inside each item; every element
+    matching `title` is kept, joined with ' | '."""
     soup = soup_of(page["cache_file"])
     if cfg["item"]:
         for item in soup.select(cfg["item"]):
-            name = txt(item.select_one(cfg["name"])) if cfg["name"] else txt(item)
-            title = txt(item.select_one(cfg["title"])) if cfg["title"] else ""
+            name = _norm(txt(item.select_one(cfg["name"]))) if cfg["name"] else _norm(txt(item))
+            title = " | ".join(_norm(txt(e)) for e in item.select(cfg["title"]) if txt(e)) if cfg["title"] else ""
+            office = _norm(txt(item.select_one(cfg["roster_office"]))) if cfg.get("roster_office") else ""
             a = item.find("a", href=True)
-            yield name, title, urldefrag(urljoin(page["url"], a["href"]))[0] if a else ""
+            yield name, title, urldefrag(urljoin(page["url"], a["href"]))[0] if a else "", office
     elif cfg["profile_regex"]:
         for a in soup.find_all("a", href=True):
             link = urldefrag(urljoin(page["url"], a["href"]))[0]
             if re.search(cfg["profile_regex"], link) and txt(a):
-                yield txt(a), "", link
+                yield txt(a), "", link, ""
+
+
+def _norm(s):
+    return re.sub(r"\s+", " ", s or "").strip()
+
+
+def title_lines(el):
+    """Split a title block on <br> into separate titles, re-joining lines that were wrapped
+    mid-phrase (previous line ends with 'and', 'of', ',', '&', or the next starts lowercase)."""
+    if not el:
+        return []
+    parts = [_norm(p) for p in el.get_text("\n").split("\n")]
+    out = []
+    for p in (p for p in parts if p):
+        if out and (re.search(r"(\band|\bof|\bthe|,|&|;)$", out[-1]) or p[0].islower()):
+            out[-1] = f"{out[-1]} {p}"
+        else:
+            out.append(p)
+    return out
+
+
+def law_notes_directory_card(soup):
+    """Law 2005-06 Lotus Notes directory card. Two templates (Oct 2005 and 2006) share:
+    name in <font size=4>, titles in the next bold <font size=2>, then a label table whose rows are
+    label | spacer | value. 'Office:' appears twice (person, then assistant): take the first."""
+    name_el = soup.find("font", attrs={"size": "4"})
+    titles = []
+    if name_el:
+        for f in name_el.find_all_next("font", attrs={"size": "2"}):
+            t = _norm(f.get_text(" "))
+            if not t:
+                continue
+            if f.find_parent("b") and not t.endswith(":"):
+                titles = title_lines(f)
+            break
+    labels = {}
+    for tr in soup.find_all("tr"):
+        tds = tr.find_all("td", recursive=False)
+        if len(tds) >= 3:
+            lab = _norm(tds[0].get_text(" "))
+            if lab.endswith(":"):
+                labels.setdefault(lab.rstrip(":").strip(), _norm(tds[2].get_text(" ")))
+    fhp = name_el.find_parent("a", href=True) if name_el else None
+    return {"name": _norm(name_el.get_text(" ")) if name_el else "",
+            "rank": " | ".join(titles), "office_number": labels.get("Office", ""),
+            "bio": "", "research_interests": "", "keywords": "",
+            "_home_page": fhp["href"] if fhp else ""}
+
+
+def law_fhp_2015(soup):
+    """Law 2015 faculty home page. Sidebar (div.fac_sidebar) has span.sectionhead groups
+    CONTACT / ASSISTANT / SUBJECTS with span.newsspaced values; body (div.faculty_body) has
+    span.titlepage name, a bold title block, italic degree lines, then the bio after the last div.line."""
+    side, body = soup.select_one("div.fac_sidebar"), soup.select_one("div.faculty_body")
+    sec, cur = {}, None
+    for el in (side.find_all("span") if side else []):
+        cls = el.get("class") or []
+        if "sectionhead" in cls:
+            cur = _norm(el.get_text(" "))
+            sec[cur] = []
+        elif cur and "newsspaced" in cls and not el.find("a", href=re.compile(r"\.pdf$", re.I)):
+            sec[cur].append(_norm(el.get_text(" ")))
+    contact = sec.get("CONTACT", [])
+    office = contact[contact.index("Room") + 1] if "Room" in contact[:-1] else ""
+    bio = ""
+    if body:
+        lines = body.find_all("div", class_="line")
+        if len(lines) >= 2:
+            bio = "\n".join(p for p in (_norm(s.get_text(" ") if hasattr(s, "get_text") else str(s))
+                                        for s in lines[-1].next_siblings) if p)
+    return {"name": _norm(soup.select_one("span.titlepage").get_text(" ")) if soup.select_one("span.titlepage") else "",
+            "rank": " | ".join(title_lines(body.find("b"))) if body else "",
+            "office_number": office, "bio": bio, "research_interests": "",
+            "keywords": " | ".join(s for s in sec.get("SUBJECTS", []) if s)}
+
+
+def law_drupal_2025(soup):
+    """Law 2025 Drupal profile. Standard field classes: h1.page-title (name), field--name-field-position-title
+    items (titles), field--name-field-office (Room), field--name-field-bio-expertise <li> items (stated
+    expertise), bio = field--name-body inside the Biography tab (div[id$=-bio]); the other body fields
+    on the page are footer blocks. School address from the footer contact block."""
+    def items(sel):
+        el = soup.select_one(sel)
+        return [_norm(i.get_text(" ")) for i in el.select(".field__item")] if el else []
+    exp = soup.select_one(".field--name-field-bio-expertise")
+    keywords = [_norm(li.get_text(" ")) for li in exp.find_all("li")] if exp else []
+    if exp and not keywords:
+        keywords = items(".field--name-field-bio-expertise")
+    bio_el = soup.select_one("div[id$='-bio'] .field--name-body") or soup.select_one("article .field--name-body")
+    bio = ""
+    if bio_el:
+        paras = [_norm(p.get_text(" ")) for p in bio_el.find_all(["p", "li"])] or [_norm(bio_el.get_text(" "))]
+        bio = "\n".join(p for p in paras if p)
+    addr = ""
+    contact = soup.select_one("#block-footer-contact-block")
+    if contact:
+        m = re.search(r"(\d+ [A-Z][\w ]+?(?:Road|Rd|Street|St|Avenue|Ave)\.?,? Charlottesville, VA \d{5})",
+                      _norm(contact.get_text(" ")))
+        addr = m.group(1) if m else ""
+    name = soup.select_one("h1.page-title")
+    return {"name": _norm(name.get_text(" ")) if name else "",
+            "rank": " | ".join(t for t in items(".field--name-field-position-title") if t),
+            "office_number": (items(".field--name-field-office") or [""])[0],
+            "bio": bio, "research_interests": "", "keywords": " | ".join(k for k in keywords if k),
+            "_address": addr}
+
+
+EXTRACTORS = {"law_notes_directory_card": law_notes_directory_card, "law_fhp_2015": law_fhp_2015,
+              "law_drupal_2025": law_drupal_2025}
 
 
 def parse_profile(cfg, year, soup):
     pc = cfg["profile"]
     html = str(soup)
+    if cfg.get("extractor"):
+        data = EXTRACTORS[cfg["extractor"]](soup)
+        def ident_(regex, start):
+            m = regex.search(html)
+            return m.group(1) if m else (NA if start and year < start else NOT_PRESENT)
+        data.pop("_home_page", None)
+        data.update({"address": data.pop("_address", ""), "orcid": ident_(ORCID_RE, ORCID_START),
+                     "google_scholar": ident_(SCHOLAR_RE, SCHOLAR_START), "ssrn": ident_(SSRN_RE, None)})
+        return data, cfg["extractor"]
     office = sel_text(soup, pc["office"])
     office_method = "css" if office else ""
     if not office:
@@ -448,6 +634,11 @@ def parse_year(year):
     cfg = CONFIG[year]
     manifest = load_manifest(year)
     by_url = {p["url"]: p for p in manifest}
+    # Loose key: the manifest may hold the Archive's spelling of a URL (":80" in the host) and the
+    # roster may link one page as both Faculty.nsf and faculty.nsf.
+    def url_key(u):
+        return re.sub(r"^(https?://[^/]+):80(?=/|$)", r"\1", u).lower()
+    by_url_ci = {url_key(p["url"]): p for p in manifest}
     roster_pages = [p for p in manifest if p["status"] == "ok" and p["role"] in ("roster", "pagination")]
     rows, seen, empty_flag = [], set(), False
     roster_method = "css" if cfg["item"] else ("profile-link heuristic" if cfg["profile_regex"] else "none")
@@ -455,14 +646,14 @@ def parse_year(year):
     for rp in roster_pages:
         if len(soup_of(rp["cache_file"]).get_text(strip=True)) < 500:
             empty_flag = True  # likely a JS-rendered shell
-        for name, roster_title, link in roster_entries(cfg, rp):
+        for name, roster_title, link, roster_office in roster_entries(cfg, rp):
             key = re.sub(r"\s+", " ", name).strip().lower()
             if not key or key in seen:
                 continue
             seen.add(key)
             row = {"year": year, "name": name, "website_link": link or NOT_PRESENT,
                    "roster_source_url": rp["url"], "roster_snapshot_ts": rp["timestamp"]}
-            prof = by_url.get(link)
+            prof = by_url.get(link) or by_url_ci.get(url_key(link))
             if prof and prof["status"] == "ok":
                 data, office_method = parse_profile(cfg, year, soup_of(prof["cache_file"]))
                 rank = data["rank"] or roster_title
@@ -477,7 +668,8 @@ def parse_year(year):
                     "orcid": data["orcid"], "google_scholar": data["google_scholar"], "ssrn": data["ssrn"],
                     "profile_snapshot_ts": prof["timestamp"],
                     "profile_days_from_target": prof["days_from_target"],
-                    "method": f"roster:{roster_method}; profile:css" +
+                    "method": f"roster:{roster_method}; profile:{office_method}" if cfg.get("extractor") else
+                              f"roster:{roster_method}; profile:css" +
                               (f"; office:{office_method}" if office_method else ""),
                 })
             else:
@@ -485,11 +677,12 @@ def parse_year(year):
                 row.update({
                     "rank": roster_title or code,
                     "bio": code, "research_interests": code, "keywords": code,
-                    "dept_address": cfg["dept_address"] or code, "office_number": code,
+                    "dept_address": cfg["dept_address"] or code, "office_number": roster_office or code,
                     "orcid": NA if year < ORCID_START else code,
                     "google_scholar": NA if year < SCHOLAR_START else code,
                     "ssrn": code, "profile_snapshot_ts": "", "profile_days_from_target": "",
-                    "method": f"roster:{roster_method}; profile:{code}",
+                    "method": f"roster:{roster_method}; profile:{code}" +
+                              ("; rank/office from roster" if roster_title or roster_office else ""),
                 })
             rows.append(row)
 

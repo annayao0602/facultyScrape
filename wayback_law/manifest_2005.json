@@ -1,10 +1,634 @@
 [
   {
     "role": "roster",
-    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/DBN",
-    "timestamp": "20051114002704",
-    "days_from_target": 91,
-    "cache_file": "wayback_law/cache/20051114002704_0be1cc83f7f5aa64.html",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/FDBN?OpenView&ExpandView",
+    "timestamp": "20060829194319",
+    "days_from_target": 379,
+    "cache_file": "wayback_law/cache/20060829194319_6cea21ef2bd72bb9.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/7e19ccc5f26afcb1852566cd00612933?OpenDocument",
+    "timestamp": "20060902101745",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101745_884bc45fc2d7d27e.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/ae2eac3e98cc30a4852570220060d403?OpenDocument",
+    "timestamp": "20060902101624",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101624_d077012f31c5ec60.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/fc63253d477cd3a0852566cd0061295d?OpenDocument",
+    "timestamp": "20060902101610",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101610_8a281de12e9adab7.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/4bf803b6a5d81c718525702600568975?OpenDocument",
+    "timestamp": "20060902101543",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101543_9a2e74a761e80e6c.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/715a39bdaa142bfa852566cd00612ab0?OpenDocument",
+    "timestamp": "20060902101934",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101934_1d430b02fb30daea.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/2559bbf12c9ada1c852570260058e9a1?OpenDocument",
+    "timestamp": "20060902101532",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101532_de25527e6025a134.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/326bc15a681fc053852566cd006129ce?OpenDocument",
+    "timestamp": "20060902101656",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101656_523a859015565d58.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/50356169c5b570ee852570260063e5dd?OpenDocument",
+    "timestamp": "20060902101430",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101430_ac65f5fb2d6edebf.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/128384e7cbbe794f852566cd00612c0b?OpenDocument",
+    "timestamp": "20060902101412",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101412_a490a328b370073b.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/cd9afa0d60b82608852566cd0061293d?OpenDocument",
+    "timestamp": "20060902101930",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101930_a6289b5e4f306bc0.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/2ff16f8a1f305fff85256ea7006aaf5f?OpenDocument",
+    "timestamp": "20060902101652",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101652_b59eeed4038b0d8f.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/117f464acd5de404852566c600676558?OpenDocument",
+    "timestamp": "20060902101443",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101443_4f871bfd647f37a7.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/5540189a0ca27662852566cd00612c2b?OpenDocument",
+    "timestamp": "20060902101347",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101347_8fc17ec423f249fa.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/44496cca2277c97f85256d330074fb49?OpenDocument",
+    "timestamp": "20060902101902",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101902_096faf439044558a.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/b1bd5fb8df1e4cb4852566cd00612977?OpenDocument",
+    "timestamp": "20060902101417",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101417_ac2785fab63a395f.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/2c9a8148c870985285256ea7005c7058?OpenDocument",
+    "timestamp": "20060902101435",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101435_0429f2d837867b51.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/bbe0baadaae6e2cf852566cd00612ba4?OpenDocument",
+    "timestamp": "20060902101342",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101342_ed45c92c1c7da7ce.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/fe1d1fef15fb1a56852566c60063fdc7?OpenDocument",
+    "timestamp": "20060902101354",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101354_2e51e5c2444cfc56.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/03c4535c13ae6a6a852566cd006129a7?OpenDocument",
+    "timestamp": "20060902101617",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101617_3950ad4c05086f43.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/252f5b5635eb9a0a85257022006640a2?OpenDocument",
+    "timestamp": "20060902101752",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101752_264126e47bb1d6b4.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/9d3fc6506ff22663852566eb00664e25?OpenDocument",
+    "timestamp": "20060902101502",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101502_8445c4d1e6956b8e.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/fca93147b41af3f1852566cd00612bd4?OpenDocument",
+    "timestamp": "20060902101605",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101605_3cfa9a2ff0559a58.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/82ff54a98e5aa02d852570260069941e?OpenDocument",
+    "timestamp": "20060902101439",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101439_744324c2d05bcbfc.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/34abd0e7c4e2f25c85257022006dafbd?OpenDocument",
+    "timestamp": "20060902100653",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100653_9e492513058fbc62.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/9316b85cf14f70d985256bd0004c983f?OpenDocument",
+    "timestamp": "20060902100440",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100440_4bf53e05a73d546d.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/8a83ae32d741dfff85256ab1006eec52?OpenDocument",
+    "timestamp": "20060902100343",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100343_dc6f33e007e13685.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/b68d556d18c946ea85257194004870e1?OpenDocument",
+    "timestamp": "20060902100418",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100418_d72cf4e9d9801885.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/549ee5a36db0f0e7852566cd00612b15?OpenDocument",
+    "timestamp": "20060902100544",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100544_ac8d3a59e1faf34a.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/6d15f891d9292fcd852566cd006129ae?OpenDocument",
+    "timestamp": "20060902100752",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100752_44a0270a52b5c042.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/c6f9af38495f647a8525719200516055?OpenDocument",
+    "timestamp": "20060902100548",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100548_d7dff5f4cf343ab3.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/71b0eb80b5a31896852566c60064cba3?OpenDocument",
+    "timestamp": "20060902100511",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100511_597d36559c4f1f54.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/3c413522e8abebc685256d360061bca9?OpenDocument",
+    "timestamp": "20051028062409",
+    "days_from_target": 74,
+    "cache_file": "wayback_law/cache/20051028062409_154d37feba33aebe.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/4da760e27f291d85852566cd00612a14?OpenDocument",
+    "timestamp": "20060902100556",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100556_cffc5302dfc73712.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/2ac0a8ee5adc879885256d3600625fe8?OpenDocument",
+    "timestamp": "20060902100502",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100502_9a1182c8b68126ee.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/bfb5bea3ed33c5a7852566cd00612845?OpenDocument",
+    "timestamp": "20051028071403",
+    "days_from_target": 74,
+    "cache_file": "wayback_law/cache/20051028071403_70189508034af293.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/8accc8cbefbaa293852566cd00612b4e?OpenDocument",
+    "timestamp": "20060902100319",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100319_f51edde2b8921ac8.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/3e32535f02f8b25b852566cd00612bcf?OpenDocument",
+    "timestamp": "20051028062548",
+    "days_from_target": 74,
+    "cache_file": "wayback_law/cache/20051028062548_22a4147ec4ca9f19.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/be157f87e49d526d852566cd006129bf?OpenDocument",
+    "timestamp": "20060902100518",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100518_aeabf20a98929994.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/c1b37628a28b139f852566cd00612b2e?OpenDocument",
+    "timestamp": "20060902100725",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100725_762b2ecb25ad7a72.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/01013285d94361ba852566c600648652?OpenDocument",
+    "timestamp": "20060902100457",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100457_aba655e3bebda2e7.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/6dcfd880122c35c8852566cd00612951?OpenDocument",
+    "timestamp": "20060902100736",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100736_06fb4675ad515a7a.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/5ef04ec39039037d852566cd00612c26?OpenDocument",
+    "timestamp": "20060902100744",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100744_1ca04fdc8bab42e5.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/e98e6cde2ca48cb8852566cd00612bca?OpenDocument",
+    "timestamp": "20060902100334",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100334_a972683c393a22f2.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/8e24d05592f0bcd5852566cd006129d3?OpenDocument",
+    "timestamp": "20060902100605",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100605_dd0467624d1487c0.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/877a0db6ae6c7166852566cd00612b8f?OpenDocument",
+    "timestamp": "20060902100704",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100704_13300525e98bbfc0.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/5d7f619dd0fff14e852566cd006129c4?OpenDocument",
+    "timestamp": "20060902100714",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100714_15a436f7faf298cc.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/98f8392c748e5fab85256ea70066cc99?OpenDocument",
+    "timestamp": "20060902100720",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100720_39c84653877fb774.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/a36b89d36de64219852566cd00612b94?OpenDocument",
+    "timestamp": "20060902100349",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100349_2d68ef64a6839d25.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/e5187256006477b5852566cd0061291a?OpenDocument",
+    "timestamp": "20060902100514",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100514_88e224f067a021b8.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/d148f4f91ae33e868525701c006850cf?OpenDocument",
+    "timestamp": "20060902100400",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100400_9b91849147ca47a8.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/4811eb10ae05152885256a8b004bd23d?OpenDocument",
+    "timestamp": "20051028063007",
+    "days_from_target": 74,
+    "cache_file": "wayback_law/cache/20051028063007_d0268548ce23ced0.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/734898c438a60b908525719200569404?OpenDocument",
+    "timestamp": "20060902101319",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101319_59869c2fce9bb5e6.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/3ef5ea25477462a9852566c6006310b4?OpenDocument",
+    "timestamp": "20060902100819",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100819_cb8bdef96a72d4be.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/d6534a95c4295b33852566cd00612b99?OpenDocument",
+    "timestamp": "20060902101312",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101312_fc41bd00ab792afc.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/afbb831bb67ebfc9852566cd00612ac4?OpenDocument",
+    "timestamp": "20060902100902",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100902_73aa20929664fc62.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/e624e6d658dbfdfd8525702600761cdf?OpenDocument",
+    "timestamp": "20060902101214",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101214_880de2e3bbba7de5.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/00ca64f46a16cb3485256abf006813b2?OpenDocument",
+    "timestamp": "20060902101251",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101251_e68baca1f18e80fb.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/100947f2fb558141852566cd00612aab?OpenDocument",
+    "timestamp": "20060902100810",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100810_1d3485e49feaa73d.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/8524bec658852958852566c60067bae8?OpenDocument",
+    "timestamp": "20060902101306",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101306_316fdc9c18cc035d.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/20861b46c4aa6346852566cd00612afb?OpenDocument",
+    "timestamp": "20060902101222",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101222_9e8f6f65da3fc219.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/4ad4c936f4f297d3852566cd006129dd?OpenDocument",
+    "timestamp": "20051028063126",
+    "days_from_target": 74,
+    "cache_file": "wayback_law/cache/20051028063126_94cfd853f2c3339e.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/8fcab705c1f9ef75852566cd00612ad3?OpenDocument",
+    "timestamp": "20060902101014",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101014_978872c52a69fd72.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/3bb5121fe9d6f91d852566c6006521b5?OpenDocument",
+    "timestamp": "20060902101044",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101044_1629f405f1c7f8d7.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/c88d1ceb405a0a4085256ab9004fb171?OpenDocument",
+    "timestamp": "20060902101242",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101242_4b25c1ba66d276e0.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/1f7698d11968771485256a8b0061ab43?OpenDocument",
+    "timestamp": "20060902100922",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100922_f9073c69ce22b0e7.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/8a231599b03104c6852566cd00612c1c?OpenDocument",
+    "timestamp": "20060902101258",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101258_5906fc07b0b84807.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/12be4690eb4cc08f852566cd00612938?OpenDocument",
+    "timestamp": "20060902100951",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100951_8a7df361c207c1c5.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/1cc10dd589549f6e8525690a006c3d52?OpenDocument",
+    "timestamp": "20051028060607",
+    "days_from_target": 74,
+    "cache_file": "wayback_law/cache/20051028060607_165b23e32090380e.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/907e496646e0ede38525702200626042?OpenDocument",
+    "timestamp": "20060902100831",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902100831_6fbf88db7fda2fc0.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/09887507de1038e3852566cd00612b6b?OpenDocument",
+    "timestamp": "20060902101110",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101110_3b0c4f0b4ae66eea.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/e092338484ef598f85257194004aba89?OpenDocument",
+    "timestamp": "20060902101121",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101121_285d6c3935ae2a56.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/d9e792f94d23727a852566cd0061283b?OpenDocument",
+    "timestamp": "20060902101405",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101405_d3e20f80d59e27e9.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/947c0a8c0079345c852566cd00612b35?OpenDocument",
+    "timestamp": "20060902101632",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101632_518676506d6027d5.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/75a4af10b8952dd8852566cd0061297c?OpenDocument",
+    "timestamp": "20060902101911",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101911_f86f492db7f2e0da.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/2a2e4b50eaacdde8852566cd00612929?OpenDocument",
+    "timestamp": "20060902101647",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101647_382cb8079f1c69af.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/d55aa858db2391ab852566db006aae50?OpenDocument",
+    "timestamp": "20060902101855",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101855_d861ce2302552cd4.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/9841479003f491e085256a8b0061c769?OpenDocument",
+    "timestamp": "20060902101639",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101639_b581c32e01f2f37f.html",
+    "status": "ok"
+  },
+  {
+    "role": "profile",
+    "url": "http://www.law.virginia.edu/lawweb/faculty.nsf/e26cd1274935f294852566d6000372f3/8921a88da6501e24852566cd00612b44?OpenDocument",
+    "timestamp": "20060902101556",
+    "days_from_target": 383,
+    "cache_file": "wayback_law/cache/20060902101556_787b9e8c04d2b816.html",
     "status": "ok"
   }
 ]
